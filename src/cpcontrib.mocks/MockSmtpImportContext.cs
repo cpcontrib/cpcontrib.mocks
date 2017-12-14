@@ -7,6 +7,21 @@ using CrownPeak.CMSAPI;
 /* Some Namespaces are not allowed. */
 namespace CrownPeak.CMSAPI.CustomLibrary
 {
+
+	/// <summary>
+	/// Used for mocking the SmptImportContext.
+	/// </summary>
+	/// <example>
+	///   <%
+	///   //basically redefine the context
+	///   MockSmtpImportContext context = new MockSmtpImportContext();
+	///   
+	///   //have to create your own incoming email context now.
+	///   context.Body = "Email Body\nvar1=value1\nvar2=value2\n";
+	///   
+	///   //can add attachments too
+	///   context.AddEmailAttachment(new MockEmailAttachment() { StringValue = "attachment string value1" }));
+	/// </example>
 	public class MockSmtpImportContext
 	{
 		public List<MockEmailAttachment> EmailAttachments = new List<MockEmailAttachment>();
